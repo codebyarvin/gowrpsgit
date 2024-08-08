@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ac94c1;
+    font-family: 'Arial', sans-serif;
+}
+
+section.game {
+    width: 80%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.score {
+    color: #f0f0f0;
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.score h2 {
+    font-size: 30px;
+}
+
+.score p {
+    text-align: center;
+    padding: 10px;
+    font-size: 25px;
+}
+
+.intro {
+    color: #f0f0f0;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+.intro h1 {
+    font-size: 50px;
+    animation: zoomIn 1s ease-in-out forwards;
+}
+
+.intro button,
+.match button {
+    width: 150px;
+    height: 50px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    background-color: #8454af;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.intro button:hover,
+.match button:hover {
+    background-color: #9a64d0;
+    transform: scale(1.1);
+}
+
+.match {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+.winner {
+    color: #f0f0f0;
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-in-out forwards;
+}
+
+.hands,
+.options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.player-hand,
+.computer-hand {
+    height: 150px;
+    width: 150px;
+    animation: shakeHands 0.5s ease-in-out infinite alternate;
+}
+
+.player-hand {
+    transform: rotateY(180deg);
+}
+
+div.fadeOut {
+    opacity: 0;
+    pointer-events: none;
+}
+
+div.fadeIn {
+    opacity: 1;
+    pointer-events: all;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes shakeHands {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}
